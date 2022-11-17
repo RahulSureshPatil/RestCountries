@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rest countries</title>
+    <script>
+        let url = "https://restcountries.com/v2/all";
+
+// Fetch the entire Data using Fetch API()
+
+// More traditional approach with Fetch API()
+
+async function flags(url) {
+    let data = await fetch(url);
+    if (data.ok) {
+        return data.json();
+    } else {
+        return data.status;
+    }
+}
+
+// console.log(Suman(url))
+
+flags(url)
+    .then(function Success(value) {
+        let data = JSON.stringify(value);
+        console.log(data);
+        document.write(data);
+    })
+    .catch(function Failure(value) {
+        console.log(value);
+    }).finally(function Final() {
+        console.log("The Fetch API() Running");
+    });
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
